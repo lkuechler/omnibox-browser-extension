@@ -64,7 +64,9 @@ class TabSearchPopup extends HTMLElement {
 			const matches = await runAllCommandsAndCollectMatches(query);
 			matchElements = matches;
 			if (query.length > 0 && matches.length === 0) {
-				resultsDiv.textContent = "No matching tabs found.";
+				const noMatchDiv = document.createElement("div");
+				noMatchDiv.textContent = "No matching tabs found.";
+				resultsDiv.appendChild(noMatchDiv);
 				return;
 			}
 			matches.forEach((match) => {
