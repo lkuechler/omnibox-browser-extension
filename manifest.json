@@ -1,8 +1,8 @@
 {
 	"manifest_version": 3,
-	"name": "Command Line Extension",
+	"name": "omnibox",
 	"version": "0.1.0",
-	"description": "A browser extension that adds a command line interface to the browser",
+	"description": "A browser extension that adds a command palette to the browser",
 	"author": "Lasse Kuechler <lasse@ukuechler.de>",
 	"permissions": ["tabs", "bookmarks", "theme"],
 	"background": {
