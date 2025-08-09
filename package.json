@@ -4,11 +4,13 @@
 	"description": "A browser extension that adds a command palette to the browser",
 	"scripts": {
 		"format": "prettier --write .",
-		"lint": "eslint ."
+		"lint": "eslint .",
+		"bundle": "web-ext build"
 	},
 	"author": "Lasse Kuechler <lasse@ukuechler.de>",
 	"license": "MIT",
 	"devDependencies": {
-		"prettier": "^3.6.2"
+		"prettier": "^3.6.2",
+		"web-ext": "^8.9.0"
 	}
 }

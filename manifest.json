@@ -4,6 +4,11 @@
 	"version": "0.1.0",
 	"description": "A browser extension that adds a command palette to the browser",
 	"author": "Lasse Kuechler <lasse@ukuechler.de>",
+	"browser_specific_settings": {
+		"gecko": {
+			"id": "omniboxextension@nlug.de"
+		}
+	},
 	"permissions": ["tabs", "bookmarks", "theme"],
 	"background": {
 		"scripts": ["background.js"]
