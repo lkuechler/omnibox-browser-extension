@@ -28,8 +28,11 @@ export class Input extends HTMLElement {
 	}
 
 	connectedCallback() {
-		const input = this.shadowRoot.querySelector("input");
-		if (input) input.focus();
+		window.setTimeout(() => {
+			const input = this.shadowRoot.querySelector("input");
+			if (input) input.focus();
+			// Without the delay it sometimes fails to focus
+		}, 100);
 	}
 
 	get value() {
