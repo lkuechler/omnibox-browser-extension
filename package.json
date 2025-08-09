@@ -3,9 +3,10 @@
 	"version": "0.1.0",
 	"description": "A browser extension that adds a command palette to the browser",
 	"scripts": {
+		"start": "web-ext run",
 		"format": "prettier --write .",
 		"lint": "eslint .",
-		"bundle": "web-ext build"
+		"bundle": "web-ext build --overwrite-dest"
 	},
 	"author": "Lasse Kuechler <lasse@ukuechler.de>",
 	"license": "MIT",
