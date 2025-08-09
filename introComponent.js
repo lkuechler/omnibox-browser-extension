@@ -25,7 +25,8 @@ export class Intro extends HTMLElement {
 				<li>Type to search for tabs by title.</li>
 				<li>Use <strong>Arrow Up</strong> and <strong>Arrow Down</strong> to navigate results.</li>
 				<li>Press <strong>Enter</strong> to switch to the selected tab.</li>
-				<li>Start your search with <strong>"&gt;"</strong> for to only get commands.</li>
+				<li>Start your search with <strong>&gt;</strong> for to only get commands.</li>
+				<li>Start your search with <strong>@</strong> to search bookmarks.</li>
 				<li>Type <strong>:audio</strong> to filter tabs playing audio.</li>
 			</ul>
 		`;

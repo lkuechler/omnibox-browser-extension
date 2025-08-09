@@ -6,6 +6,7 @@ export class BaseMatch extends HTMLElement {
 			});
 		});
 	}
+
 	constructor(tab) {
 		super();
 		this.tab = tab;

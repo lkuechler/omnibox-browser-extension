@@ -4,7 +4,7 @@
 	"version": "0.1.0",
 	"description": "A browser extension that adds a command line interface to the browser",
 	"author": "Lasse Kuechler <lasse@ukuechler.de>",
-	"permissions": ["tabs", "theme"],
+	"permissions": ["tabs", "bookmarks", "theme"],
 	"background": {
 		"scripts": ["background.js"]
 	},

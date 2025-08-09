@@ -37,11 +37,12 @@ export class TabMatch extends BaseMatch {
 				}
 			</style>
 			<div class="tab-row">
-				<div class="tab-title">${this.tab.title}</div>
+				<div class="tab-title"></div>
 				${this.tab.audible ? `<button class="mute-btn" title="Mute tab">${this.tab.mutedInfo && this.tab.mutedInfo.muted ? "🔇" : "🔊"}</button>` : ""}
 			</div>
 		`;
 		const tabTitle = this.shadowRoot.querySelector(".tab-title");
+		tabTitle.textContent = this.tab.title;
 		tabTitle.addEventListener("click", () => {
 			this.activate();
 		});

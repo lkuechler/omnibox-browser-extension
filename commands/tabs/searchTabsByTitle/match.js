@@ -1,7 +1,13 @@
 import { TabMatch } from "../tabMatchComponent.js";
 
 export async function searchTabsByTitle(query) {
-	if (!query || query.startsWith(">") || query.startsWith(":")) return [];
+	if (
+		!query ||
+		query.startsWith(">") ||
+		query.startsWith(":") ||
+		query.startsWith("@")
+	)
+		return [];
 	const tabs = await browser.tabs.query({});
 	return tabs
 		.filter(
