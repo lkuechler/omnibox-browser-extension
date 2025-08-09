@@ -9,12 +9,6 @@ class TabSearchPopup extends HTMLElement {
 		this.render();
 	}
 
-	connectedCallback() {
-		// Focus input when component is attached to DOM
-		const input = this.shadowRoot.getElementById("quickInput");
-		if (input) input.focus();
-	}
-
 	render() {
 		this.shadowRoot.innerHTML = `
 		<style>
@@ -26,32 +20,21 @@ class TabSearchPopup extends HTMLElement {
 			#results :first-child {
 				margin-top: 16px;
 			}
-			input[type="text"] {
-				box-sizing: border-box;
-				width: 100%;
-				padding: 8px;
-				font-size: 16px;
-				background: Field;
-				color: FieldText;
-				border: 1px solid ButtonBorder;
-				border-radius: 4px;
-			}
 			.selected {
 				background: Highlight;
 				color: HighlightText;
 				border-radius: 4px;
 			}
 		</style>
-		<input type="text" id="quickInput" placeholder="Type something..." autofocus />
+
+		<input-component id="input"></input-component>
 		<div id="results"></div>
 	`;
 
-		const input = this.shadowRoot.getElementById("quickInput");
+		const input = this.shadowRoot.getElementById("input");
 		const resultsDiv = this.shadowRoot.getElementById("results");
 		let matchElements = [];
 		let selectedIndex = -1;
-		// Focus input after rendering
-		setTimeout(() => input.focus(), 0);
 
 		const updateSelection = (newIndex) => {
 			if (matchElements.length === 0) return;
@@ -84,7 +67,7 @@ class TabSearchPopup extends HTMLElement {
 			}
 		};
 
-		input.addEventListener("input", (e) => {
+		input.addEventListener("input", () => {
 			searchTabs(input.value);
 		});
 

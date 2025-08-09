@@ -9,12 +9,18 @@ export class TabMatch extends BaseMatch {
 		this.shadowRoot.innerHTML = `
 			<style>
 				.selected {
-					background: #e0e7ff;
+					background: var(--highlight);
+					color: var(--text-highlight);
+					font-weight: bold;
 					border-radius: 4px;
+				}
+				:hover {
+					background: var(--hover);
 				}
 				.tab-row {
 					display: flex;
 					align-items: center;
+					padding: 8px;
 				}
 				.tab-title {
 					flex: 1;
@@ -23,7 +29,7 @@ export class TabMatch extends BaseMatch {
 				}
 				.mute-btn {
 					margin-left: 8px;
-					background: #f3f4f6;
+					background: transparent;
 					border: none;
 					border-radius: 3px;
 					cursor: pointer;

@@ -15,14 +15,18 @@ export class DuplicateActiveTab extends BaseMatch {
 		this.shadowRoot.innerHTML = `
 			<style>
 				.selected {
-					background: #ffe7e0;
+					background: var(--highlight);
+					color: var(--text-highlight);
+					font-weight: bold;
 					border-radius: 4px;
+				}
+				:hover {
+					background: var(--hover);
 				}
 				div {
 					cursor: pointer;
-					padding: 4px 0;
-					font-weight: bold;
-					color: #d97706;
+					padding: 8px;
+					color: var(--text);
 				}
 			</style>
 			<div>Duplicate active tab</div>

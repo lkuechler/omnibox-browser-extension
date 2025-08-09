@@ -1,0 +1,19 @@
+:root {
+	--background: rgb(28, 27, 34);
+	--border: rgb(58, 57, 68);
+	--text: rgb(251, 251, 254);
+	--hover: rgba(251, 251, 254, 0.14);
+	--text-highlight: oklch(0.76 0.14 205);
+	--highlight: rgba(0, 201, 219, 0.08);
+}
+
+@media (prefers-color-scheme: light) {
+	:root {
+		--background: rgb(255, 255, 255);
+		--border: rgb(207, 207, 216);
+		--text: rgb(21, 20, 26);
+		--hover: rgba(21, 20, 26, 0);
+		--text-highlight: oklch(0.55 0.24 260);
+		--highlight: rgba(0, 98, 249, 0.08);
+	}
+}
