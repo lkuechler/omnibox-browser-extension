@@ -9,27 +9,35 @@ class TabSearchPopup extends HTMLElement {
 		this.render();
 	}
 
-	render() {
-		this.shadowRoot.innerHTML = `
-		<style>
-			#results {
-				display: flex;
-				flex-direction: column;
-				gap: 8px;
-			}
-			#results :first-child {
-				margin-top: 16px;
-			}
-			.selected {
-				background: Highlight;
-				color: HighlightText;
-				border-radius: 4px;
-			}
-		</style>
+	async render() {
+		const currentWindow = await browser.windows.getCurrent();
+		const currentWindowHeight = currentWindow.height;
+		const currentWindowWidth = currentWindow.width;
 
-		<input-component id="input"></input-component>
-		<div id="results"></div>
-	`;
+		this.shadowRoot.innerHTML = `
+			<style>
+				#results {
+					display: flex;
+					flex-direction: column;
+					gap: 8px;
+				}
+				#results :first-child {
+					margin-top: 16px;
+				}
+
+				#wrapper {
+					display: block;
+					overflow: scroll;
+					width: calc(${currentWindowWidth}px / 2);
+					max-height: calc(${currentWindowHeight}px / 2);
+				}
+			</style>
+
+			<div id="wrapper">
+				<input-component id="input"></input-component>
+				<div id="results"></div>
+			</div>
+		`;
 
 		const input = this.shadowRoot.getElementById("input");
 		const resultsDiv = this.shadowRoot.getElementById("results");
