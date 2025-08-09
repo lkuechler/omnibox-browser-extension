@@ -36,11 +36,13 @@ class TabSearchPopup extends HTMLElement {
 			<div id="wrapper">
 				<input-component id="input"></input-component>
 				<div id="results"></div>
+				<intro-component id="intro"></intro-component>
 			</div>
 		`;
 
 		const input = this.shadowRoot.getElementById("input");
 		const resultsDiv = this.shadowRoot.getElementById("results");
+		const intro = this.shadowRoot.getElementById("intro");
 		let matchElements = [];
 		let selectedIndex = -1;
 
@@ -60,12 +62,16 @@ class TabSearchPopup extends HTMLElement {
 		const searchTabs = async (query) => {
 			resultsDiv.innerHTML = "";
 			selectedIndex = -1;
+			// Hide intro if anything is typed, show if empty
+			if (intro) {
+				intro.style.display = query.length > 0 ? "none" : "block";
+			}
 
 			const matches = await runAllCommandsAndCollectMatches(query);
 			matchElements = matches;
 			if (query.length > 0 && matches.length === 0) {
 				const noMatchDiv = document.createElement("div");
-				noMatchDiv.textContent = "No matching tabs found.";
+				noMatchDiv.textContent = "No matches found.";
 				resultsDiv.appendChild(noMatchDiv);
 				return;
 			}
