@@ -5,7 +5,7 @@
 	"scripts": {
 		"start": "web-ext run",
 		"format": "prettier --write .",
-		"lint": "eslint .",
+		"lint": "web-ext lint",
 		"bundle": "web-ext build --overwrite-dest"
 	},
 	"author": "Lasse Kuechler <lasse@ukuechler.de>",
