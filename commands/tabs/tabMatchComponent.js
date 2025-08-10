@@ -38,7 +38,8 @@ export class TabMatch extends BaseMatch {
 			</style>
 			<div class="tab-row">
 				<div class="tab-title"></div>
-				${this.tab.audible ? `<button class="mute-btn" title="Mute tab">${this.tab.mutedInfo && this.tab.mutedInfo.muted ? "🔇" : "🔊"}</button>` : ""}
+				${this.tab.audible ? `<button class="mute-btn" title="Mute tab">${this.tab.mutedInfo && this.tab.mutedInfo.muted ? "<icon-unmute></icon-unmute>" : "<icon-mute></icon-mute>"}</button>` : ""}
+				${this.tab.hidden ? `<icon-hidden></icon-hidden>` : ""}
 			</div>
 		`;
 		const tabTitle = this.shadowRoot.querySelector(".tab-title");
