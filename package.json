@@ -6,7 +6,8 @@
 		"start": "web-ext run",
 		"format": "prettier --write .",
 		"lint": "web-ext lint",
-		"bundle": "web-ext build --overwrite-dest"
+		"bundle": "web-ext build --overwrite-dest",
+		"version": "node scripts/updateManifest.js $npm_package_version && prettier --write manifest.json && git add manifest.json"
 	},
 	"author": "Lasse Kuechler <lasse@ukuechler.de>",
 	"license": "MIT",
