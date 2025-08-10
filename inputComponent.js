@@ -9,11 +9,13 @@ export class Input extends HTMLElement {
 		this.shadowRoot.innerHTML = `
 			<style>
 				input {
+					position: sticky;
+					top: 0;
 					box-sizing: border-box;
 					width: 100%;
 					padding: 6px;
 					font-size: 16px;
-					background: transparent;
+					background: var(--background);
 					color: var(--text);
 					border: none;
 					border-bottom: 1px solid var(--border);

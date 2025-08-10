@@ -54,7 +54,10 @@ class TabSearchPopup extends HTMLElement {
 			selectedIndex = newIndex;
 			if (selectedIndex >= 0 && selectedIndex < matchElements.length) {
 				matchElements[selectedIndex].setAttribute("selected", "");
-				matchElements[selectedIndex].scrollIntoView({ block: "nearest" });
+				matchElements[selectedIndex].scrollIntoView({
+					block: "center",
+					behavior: "smooth",
+				});
 				this.selectedMatchComponent = matchElements[selectedIndex];
 			}
 		};
