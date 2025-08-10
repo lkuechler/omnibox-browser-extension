@@ -1,7 +1,7 @@
 {
 	"manifest_version": 3,
 	"name": "omnibox",
-	"version": "0.2.2",
+	"version": "0.2.3",
 	"description": "A browser extension that adds a command palette to the browser",
 	"author": "Lasse Kuechler <lasse@ukuechler.de>",
 	"browser_specific_settings": {
