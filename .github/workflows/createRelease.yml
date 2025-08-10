@@ -1,0 +1,19 @@
+name: Create Release
+
+on:
+  push:
+    tags:
+      - "v*.*.*"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Bundle for release
+        run: npm run bundle
+      - name: Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: web-ext-artifacts/*.zip
