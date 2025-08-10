@@ -23,7 +23,7 @@ export class JumpToLastTab extends BaseMatch {
 					color: var(--text);
 				}
 			</style>
-			<div>Jump to last tab</div>
+			<div>&#x276F; Jump to last tab</div>
 		`;
 		this.shadowRoot.querySelector("div").addEventListener("click", () => {
 			this.activate();

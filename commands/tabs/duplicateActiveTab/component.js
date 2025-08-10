@@ -29,7 +29,7 @@ export class DuplicateActiveTab extends BaseMatch {
 					color: var(--text);
 				}
 			</style>
-			<div>Duplicate active tab</div>
+			<div>&#x276F; Duplicate active tab</div>
 		`;
 		this.shadowRoot.querySelector("div").addEventListener("click", () => {
 			this.activate();

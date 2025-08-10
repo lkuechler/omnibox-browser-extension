@@ -23,7 +23,7 @@ export class JumpToFirstTab extends BaseMatch {
 					color: var(--text);
 				}
 			</style>
-			<div>Jump to first tab</div>
+			<div>&#x276F; Jump to first tab</div>
 		`;
 		this.shadowRoot.querySelector("div").addEventListener("click", () => {
 			this.activate();
