@@ -11,5 +11,7 @@ export async function jumpToLastTab(query) {
 	const currentWindow = await browser.windows.getCurrent();
 	const tabs = await browser.tabs.query({ windowId: currentWindow.id });
 
-	return [new JumpToLastTab(tabs[tabs.length - 1])];
+	const lastNonHiddenTab = tabs.reverse().find((tab) => !tab.hidden);
+
+	return [new JumpToLastTab(lastNonHiddenTab)];
 }

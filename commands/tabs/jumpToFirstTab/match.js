@@ -12,5 +12,7 @@ export async function jumpToFirstTab(query) {
 	const currentWindow = await browser.windows.getCurrent();
 	const tabs = await browser.tabs.query({ windowId: currentWindow.id });
 
-	return [new JumpToFirstTab(tabs[0])];
+	const firstNonHiddenTab = tabs.find((tab) => !tab.hidden);
+
+	return [new JumpToFirstTab(firstNonHiddenTab)];
 }
