@@ -2,9 +2,9 @@ import { TabMatch } from "../tabMatchComponent.js";
 
 export async function searchTabsBySound(query) {
 	const cleanedQuery = query.toLowerCase().trim();
-	const commandString = ":sound";
+	const commandStrings = [":sound", ":audio"];
 
-	if (!commandString.includes(cleanedQuery)) return [];
+	if (!commandStrings.some((cmd) => cmd.includes(cleanedQuery))) return [];
 
 	const tabs = await browser.tabs.query({ audible: true });
 	return tabs.map((tab) => new TabMatch(tab));
