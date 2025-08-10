@@ -32,3 +32,9 @@ jobs:
         run: |
           git push origin HEAD:main
           git push origin ${{ github.event.inputs.version }}
+      - name: bundle for release
+        run: npm run bundle
+      - name: Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: web-ext-artifacts/*.zip
