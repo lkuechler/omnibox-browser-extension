@@ -4,6 +4,7 @@
 	"description": "A browser extension that adds a command palette to the browser",
 	"scripts": {
 		"start": "web-ext run",
+		"start:chrome": "web-ext run --target chromium",
 		"format": "prettier --write .",
 		"lint": "web-ext lint",
 		"bundle": "web-ext build --overwrite-dest",

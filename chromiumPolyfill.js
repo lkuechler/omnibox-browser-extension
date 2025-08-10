@@ -2,9 +2,3 @@ if (typeof browser === "undefined") {
 	// Chrome does not support the browser namespace yet.
 	globalThis.browser = chrome;
 }
-
-browser.commands.onCommand.addListener((command) => {
-	if (command === "open-input") {
-		browser.action.openPopup();
-	}
-});

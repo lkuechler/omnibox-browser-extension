@@ -1,10 +1,10 @@
 export class BaseMatch extends HTMLElement {
-	activate() {
-		browser.windows.update(this.tab.windowId, { focused: true }).then(() => {
-			browser.tabs.update(this.tab.id, { active: true }).then(() => {
-				window.close();
-			});
-		});
+	async activate() {
+		// This order is important for chromium based browser
+		// They do not switch focus correctly if the window is set active first
+		await browser.tabs.update(this.tab.id, { active: true });
+		await browser.windows.update(this.tab.windowId, { focused: true });
+		window.close();
 	}
 
 	constructor(tab) {
