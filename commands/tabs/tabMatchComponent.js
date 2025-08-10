@@ -8,19 +8,25 @@ export class TabMatch extends BaseMatch {
 	render() {
 		this.shadowRoot.innerHTML = `
 			<style>
-				.selected {
-					background: var(--highlight);
-					color: var(--text-highlight);
-					font-weight: bold;
-					border-radius: 4px;
-				}
-				:hover {
-					background: var(--hover);
-				}
 				.tab-row {
 					display: flex;
 					align-items: center;
+					gap: 16px;
 					padding: 8px;
+					border-radius: 4px;
+				}
+				.tab-row.selected {
+					background: var(--highlight);
+					color: var(--text-highlight);
+					font-weight: bold;
+				}
+				.tab-row:hover {
+					background: var(--hover);
+				}
+				.icons {
+					display: flex;
+					gap: 8px;
+					align-items: center;
 				}
 				.tab-title {
 					flex: 1;
@@ -28,18 +34,19 @@ export class TabMatch extends BaseMatch {
 					padding: 4px 0;
 				}
 				.mute-btn {
-					margin-left: 8px;
+					margin: 0;
+					padding: 0;
 					background: transparent;
 					border: none;
-					border-radius: 3px;
 					cursor: pointer;
-					padding: 2px 8px;
 				}
 			</style>
 			<div class="tab-row">
 				<div class="tab-title"></div>
-				${this.tab.audible ? `<button class="mute-btn" title="Mute tab">${this.tab.mutedInfo && this.tab.mutedInfo.muted ? "<icon-unmute></icon-unmute>" : "<icon-mute></icon-mute>"}</button>` : ""}
-				${this.tab.hidden ? `<icon-hidden></icon-hidden>` : ""}
+				<div class="icons">
+					${this.tab.hidden ? `<icon-hidden></icon-hidden>` : ""}
+					${this.tab.audible ? `<button class="mute-btn" title="Mute tab">${this.tab.mutedInfo && this.tab.mutedInfo.muted ? "<icon-unmute></icon-unmute>" : "<icon-mute></icon-mute>"}</button>` : ""}
+				</div>
 			</div>
 		`;
 		const tabTitle = this.shadowRoot.querySelector(".tab-title");
