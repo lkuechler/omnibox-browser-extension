@@ -4,6 +4,7 @@ import { jumpToLastTab } from "./tabs/jumpToLastTab/match.js";
 import { jumpToFirstTab } from "./tabs/jumpToFirstTab/match.js";
 import { duplicateActiveTab } from "./tabs/duplicateActiveTab/match.js";
 import { searchBookmarksByTitle } from "./bookmarks/searchBookmarksByTitle/match.js";
+import { closeActiveTab } from "./tabs/closeActiveTab/match.js";
 
 export const commands = [
 	searchTabsByTitle,
@@ -12,4 +13,5 @@ export const commands = [
 	searchTabsBySound,
 	duplicateActiveTab,
 	searchBookmarksByTitle,
+	closeActiveTab,
 ];
