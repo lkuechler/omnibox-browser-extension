@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.1](https://github.com/lkuechler/omnibox-browser-extension/compare/v0.4.0...v0.4.1) (2025-08-11)
+
+
+### Bug Fixes
+
+* manually update manifest file to correct version ([08985d5](https://github.com/lkuechler/omnibox-browser-extension/commit/08985d504eab7eea399b80102f7cf08d04ac47bd))
+
 ## [0.4.0](https://github.com/lkuechler/omnibox-browser-extension/compare/v0.3.1...v0.4.0) (2025-08-11)
 
 
