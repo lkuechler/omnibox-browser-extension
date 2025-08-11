@@ -25,6 +25,14 @@
 				"windows": "Alt+P"
 			},
 			"description": "Open the input box"
+		},
+		"open-input-prefill": {
+			"suggested_key": {
+				"default": "Alt+Shift+P",
+				"mac": "Alt+Shift+P",
+				"windows": "Alt+Shift+P"
+			},
+			"description": "Open the input box prefilled with command indicator"
 		}
 	}
 }

@@ -41,6 +41,11 @@ export class Input extends HTMLElement {
 		const input = this.shadowRoot.querySelector("input");
 		return input ? input.value : "";
 	}
+
+	set value(newValue) {
+		const input = this.shadowRoot.querySelector("input");
+		if (input) input.value = newValue;
+	}
 }
 
 customElements.define("input-component", Input);
