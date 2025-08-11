@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.1](https://github.com/lkuechler/omnibox-browser-extension/compare/v0.3.0...v0.3.1) (2025-08-11)
+
+
+### Bug Fixes
+
+* **introComponent:** wording for commands ([9ce3c45](https://github.com/lkuechler/omnibox-browser-extension/commit/9ce3c454903f3ffa99aa2e689ffadadfe3eec4d1))
+
 ## [0.3.0](https://github.com/lkuechler/omnibox-browser-extension/compare/v0.2.3...v0.3.0) (2025-08-11)
 
 
