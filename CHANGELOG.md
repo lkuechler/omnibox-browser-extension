@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.4.0](https://github.com/lkuechler/omnibox-browser-extension/compare/v0.3.1...v0.4.0) (2025-08-11)
+
+
+### Features
+
+* add new shortcut that prefills the input with command prefix ([f86113d](https://github.com/lkuechler/omnibox-browser-extension/commit/f86113db04b5beb6e543806250e8cacfe13cbaa4))
+* change default short cut to Alt+P ([17264dd](https://github.com/lkuechler/omnibox-browser-extension/commit/17264dd31c0f6361219e6512e9c091e34fa4bf43))
+
 ## [0.3.1](https://github.com/lkuechler/omnibox-browser-extension/compare/v0.3.0...v0.3.1) (2025-08-11)
 
 
