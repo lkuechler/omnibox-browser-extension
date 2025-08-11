@@ -1,14 +1,14 @@
 {
-  "packages": {
-    ".": {
-      "release-type": "node",
-      "extra-files": [
-        {
-          "path": "manifest.json",
-          "type": "json",
-          "version_field": "version"
-        }
-      ]
-    }
-  }
+	"packages": {
+		".": {
+			"release-type": "node",
+			"extra-files": [
+				{
+					"path": "manifest.json",
+					"type": "json",
+					"version_field": "version"
+				}
+			]
+		}
+	}
 }
