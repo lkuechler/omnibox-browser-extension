@@ -1,8 +1,8 @@
 import { BaseMatch } from "../../baseMatchComponent.js";
 
 export class BookmarkMatchComponent extends BaseMatch {
-	constructor(bookmark) {
-		super(bookmark);
+	constructor(bookmark, searchScore) {
+		super(bookmark, searchScore);
 	}
 
 	activate() {

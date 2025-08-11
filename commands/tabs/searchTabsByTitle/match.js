@@ -9,10 +9,12 @@ export async function searchTabsByTitle(query) {
 	)
 		return [];
 	const tabs = await browser.tabs.query({});
-	return tabs
-		.filter(
-			(tab) =>
-				tab.title && tab.title.toLowerCase().includes(query.toLowerCase()),
-		)
-		.map((tab) => new TabMatch(tab));
+	const fuse = new Fuse(tabs, {
+		keys: ["title"],
+		includeScore: true,
+		distance: 0.4,
+		shouldSort: true,
+	});
+	const results = fuse.search(query);
+	return results.map((result) => new TabMatch(result.item, result.score));
 }

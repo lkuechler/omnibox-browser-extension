@@ -16,24 +16,37 @@ export async function searchBookmarksByTitle(query) {
 
 	const flat = flattenBookmarks(allBookmarks);
 
-	const titleMatches = flat
+	const fuseTitle = new Fuse(flat, {
+		keys: ["title"],
+		includeScore: true,
+		distance: 0.4,
+		shouldSort: true,
+	});
+	const titleMatches = fuseTitle
+		.search(searchTerm)
+		.map((result) => result.item)
 		.filter(
 			(bookmark) =>
-				bookmark.title && bookmark.title.toLowerCase().includes(searchTerm),
-		)
-		.filter(
-			(bookmark) =>
+				bookmark.title &&
 				bookmark.folderTitle !== "Bookmarks Menu" &&
 				bookmark.folderTitle !== "Mozilla Firefox",
 		)
 		.map((bookmark) => ({ ...bookmark, matchType: "title" }));
 
 	const titleIds = new Set(titleMatches.map((b) => b.id));
-	const folderTitleMatches = flat
+
+	const fuseFolderTitle = new Fuse(flat, {
+		keys: ["folderTitle"],
+		includeScore: true,
+		distance: 0.4,
+		shouldSort: true,
+	});
+	const folderTitleMatches = fuseFolderTitle
+		.search(searchTerm)
+		.map((result) => result.item)
 		.filter(
 			(bookmark) =>
 				bookmark.folderTitle &&
-				bookmark.folderTitle.toLowerCase().includes(searchTerm) &&
 				bookmark.url &&
 				bookmark.title &&
 				!titleIds.has(bookmark.id),
@@ -41,5 +54,7 @@ export async function searchBookmarksByTitle(query) {
 		.map((bookmark) => ({ ...bookmark, matchType: "folderTitle" }));
 
 	const allMatches = [...titleMatches, ...folderTitleMatches];
-	return allMatches.map((bookmark) => new BookmarkMatchComponent(bookmark));
+	return allMatches.map(
+		(bookmark) => new BookmarkMatchComponent(bookmark, bookmark.score),
+	);
 }

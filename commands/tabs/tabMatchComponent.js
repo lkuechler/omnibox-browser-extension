@@ -1,8 +1,8 @@
 import { BaseMatch } from "../baseMatchComponent.js";
 
 export class TabMatch extends BaseMatch {
-	constructor(tab) {
-		super(tab);
+	constructor(tab, searchScore) {
+		super(tab, searchScore);
 	}
 
 	render() {

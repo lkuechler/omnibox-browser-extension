@@ -1,17 +1,21 @@
 import { DuplicateActiveTab } from "./component.js";
 
-const normalize = (str) => str.toLowerCase().replace(/\s/g, "").trim();
+const commandString = "> duplicate active tab";
+
+const fuse = new Fuse([commandString], {
+	includeScore: true,
+});
 
 export async function duplicateActiveTab(query) {
-	const cleanedQuery = normalize(query);
-	const commandString = normalize("> duplicate active tab");
+	if (!query || !query.startsWith(">")) return [];
 
-	if (!commandString.includes(cleanedQuery)) return [];
+	const results = fuse.search(query);
+	if (results.length === 0) return [];
 
 	const activeTabs = await browser.tabs.query({
 		active: true,
 		currentWindow: true,
 	});
 
-	return [new DuplicateActiveTab(activeTabs[0])];
+	return [new DuplicateActiveTab(activeTabs[0], results[0].score)];
 }

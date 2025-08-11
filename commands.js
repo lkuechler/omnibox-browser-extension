@@ -13,5 +13,10 @@ export async function runAllCommandsAndCollectMatches(query) {
 			matches.push(...result);
 		}
 	}
+
+	matches.sort((a, b) => {
+		return a.searchScore - b.searchScore;
+	});
+
 	return matches;
 }

@@ -1,17 +1,21 @@
 import { JumpToLastTab } from "./component.js";
 
-const normalize = (str) => str.toLowerCase().replace(/\s/g, "").trim();
+const commandString = "> jump to last tab";
+const fuse = new Fuse([commandString], {
+	includeScore: true,
+});
 
 export async function jumpToLastTab(query) {
-	const cleanedQuery = normalize(query);
-	const commandString = normalize("> jump to last tab");
+	if (!query || !query.startsWith(">")) return [];
 
-	if (!commandString.includes(cleanedQuery)) return [];
+	const results = fuse.search(query);
+
+	if (results.length === 0) return [];
 
 	const currentWindow = await browser.windows.getCurrent();
 	const tabs = await browser.tabs.query({ windowId: currentWindow.id });
 
 	const lastNonHiddenTab = tabs.reverse().find((tab) => !tab.hidden);
 
-	return [new JumpToLastTab(lastNonHiddenTab)];
+	return [new JumpToLastTab(lastNonHiddenTab, results[0].score)];
 }

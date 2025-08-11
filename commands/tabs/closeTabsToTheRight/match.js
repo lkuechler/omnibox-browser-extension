@@ -1,17 +1,22 @@
 import { CloseTabsToTheRight } from "./component.js";
 
-const normalize = (str) => str.toLowerCase().replace(/\s/g, "").trim();
+const commandString = "> close tabs to the right";
+
+const fuse = new Fuse([commandString], {
+	includeScore: true,
+});
 
 export async function closeTabsToTheRight(query) {
-	const cleanedQuery = normalize(query);
-	const commandString = normalize("> close tabs to the right");
+	if (!query || !query.startsWith(">")) return [];
 
-	if (!commandString.includes(cleanedQuery)) return [];
+	const results = fuse.search(query);
+
+	if (results.length === 0) return [];
 
 	const activeTabs = await browser.tabs.query({
 		active: true,
 		currentWindow: true,
 	});
 
-	return [new CloseTabsToTheRight(activeTabs[0])];
+	return [new CloseTabsToTheRight(activeTabs[0], results[0].score)];
 }

@@ -7,9 +7,10 @@ export class BaseMatch extends HTMLElement {
 		window.close();
 	}
 
-	constructor(tab) {
+	constructor(tab, searchScore) {
 		super();
 		this.tab = tab;
+		this.searchScore = searchScore;
 		this.tabIndex = -1;
 		this.attachShadow({ mode: "open" });
 		this.render();
