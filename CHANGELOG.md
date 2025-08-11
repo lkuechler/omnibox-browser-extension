@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.5.1](https://github.com/lkuechler/omnibox-browser-extension/compare/omnibox-browser-extension-v0.5.0...omnibox-browser-extension-v0.5.1) (2025-08-11)
+
+
+### Bug Fixes
+
+* **popup:** limit max-width to 600px ([0f73e34](https://github.com/lkuechler/omnibox-browser-extension/commit/0f73e341da3897c816ce75cdea323fff07ad64d3))
+
 ## [0.5.0](https://github.com/lkuechler/omnibox-browser-extension/compare/omnibox-browser-extension-v0.4.0...omnibox-browser-extension-v0.5.0) (2025-08-11)
 
 
