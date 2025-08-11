@@ -20,8 +20,9 @@
 	"commands": {
 		"open-input": {
 			"suggested_key": {
-				"default": "Ctrl+P",
-				"mac": "MacCtrl+P"
+				"default": "Alt+P",
+				"mac": "Alt+P",
+				"windows": "Alt+P"
 			},
 			"description": "Open the input box"
 		}
