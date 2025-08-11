@@ -29,6 +29,7 @@ class TabSearchPopup extends HTMLElement {
 					display: block;
 					overflow-y: auto;
 					width: calc(${currentWindowWidth}px / 2);
+					max-width: 600px;
 					max-height: calc(${currentWindowHeight}px / 2);
 				}
 			</style>
