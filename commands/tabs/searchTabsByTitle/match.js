@@ -14,8 +14,8 @@ export async function searchTabsByTitle(query) {
 	const fuse = new Fuse(tabs, {
 		keys: ["title"],
 		includeScore: true,
-		distance: 0.4,
 		shouldSort: true,
+		minMatchCharLength: 2,
 	});
 	const results = fuse.search(query);
 	return results.map((result) => new TabMatch(result.item, result.score));
