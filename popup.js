@@ -14,6 +14,9 @@ class TabSearchPopup extends HTMLElement {
 		const currentWindowHeight = currentWindow.height;
 		const currentWindowWidth = currentWindow.width;
 
+		const computedWidth = Math.min(currentWindowWidth / 2, 600);
+		const computedHeight = currentWindowHeight / 2;
+
 		this.shadowRoot.innerHTML = `
 			<style>
 				#results {
@@ -28,9 +31,9 @@ class TabSearchPopup extends HTMLElement {
 				#wrapper {
 					display: block;
 					overflow-y: auto;
-					width: calc(${currentWindowWidth}px / 2);
+					width: ${computedWidth}px;
 					max-width: 600px;
-					max-height: calc(${currentWindowHeight}px / 2);
+					max-height: ${computedHeight}px;
 				}
 			</style>
 
