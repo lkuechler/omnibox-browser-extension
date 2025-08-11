@@ -1,3 +1,5 @@
+import Fuse from "fuse.js";
+
 import { JumpToLastTab } from "./component.js";
 
 const commandString = "> jump to last tab";

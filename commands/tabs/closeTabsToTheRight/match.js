@@ -1,3 +1,5 @@
+import Fuse from "fuse.js";
+
 import { CloseTabsToTheRight } from "./component.js";
 
 const commandString = "> close tabs to the right";

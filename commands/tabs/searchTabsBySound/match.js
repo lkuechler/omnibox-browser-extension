@@ -1,3 +1,5 @@
+import Fuse from "fuse.js";
+
 import { TabMatch } from "../tabMatchComponent.js";
 
 export async function searchTabsBySound(query) {

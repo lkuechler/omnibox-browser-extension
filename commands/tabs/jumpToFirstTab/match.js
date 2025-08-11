@@ -1,3 +1,5 @@
+import Fuse from "fuse.js";
+
 import { JumpToFirstTab } from "./component.js";
 
 const commandString = "> jump to first tab";

@@ -1,3 +1,5 @@
+import Fuse from "fuse.js";
+
 import { CloseActiveTab } from "./component.js";
 
 const commandString = "> close active tab";

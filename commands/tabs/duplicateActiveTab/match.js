@@ -1,3 +1,5 @@
+import Fuse from "fuse.js";
+
 import { DuplicateActiveTab } from "./component.js";
 
 const commandString = "> duplicate active tab";

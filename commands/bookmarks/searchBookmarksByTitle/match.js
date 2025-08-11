@@ -1,3 +1,5 @@
+import Fuse from "fuse.js";
+
 import { BookmarkMatchComponent } from "./component.js";
 
 export async function searchBookmarksByTitle(query) {
