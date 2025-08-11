@@ -47,7 +47,7 @@ class TabSearchPopup extends HTMLElement {
 		let selectedIndex = -1;
 
 		// Listen for message from background to prefill input
-		browser.runtime.onMessage.addListener((message, sender, sendResponse) => {
+		browser.runtime.onMessage.addListener((message, _sender, _sendResponse) => {
 			if (message === "prefill-input") {
 				input.value = "> ";
 				input.dispatchEvent(new Event("input"));
