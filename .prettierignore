@@ -1,0 +1,2 @@
+# Ignore manifest file because it is also changed by release-please action
+manifest.json
