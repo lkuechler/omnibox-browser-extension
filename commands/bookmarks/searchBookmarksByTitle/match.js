@@ -21,41 +21,49 @@ export async function searchBookmarksByTitle(query) {
 	const fuseTitle = new Fuse(flat, {
 		keys: ["title"],
 		includeScore: true,
-		distance: 0.4,
 		shouldSort: true,
+		minMatchCharLength: 2,
 	});
 	const titleMatches = fuseTitle
 		.search(searchTerm)
-		.map((result) => result.item)
 		.filter(
-			(bookmark) =>
-				bookmark.title &&
-				bookmark.folderTitle !== "Bookmarks Menu" &&
-				bookmark.folderTitle !== "Mozilla Firefox",
+			(result) =>
+				result.item.title &&
+				result.item.folderTitle !== "Bookmarks Menu" &&
+				result.item.folderTitle !== "Mozilla Firefox",
 		)
-		.map((bookmark) => ({ ...bookmark, matchType: "title" }));
+		.map((result) => ({
+			...result.item,
+			matchType: "title",
+			score: result.score,
+		}));
 
 	const titleIds = new Set(titleMatches.map((b) => b.id));
 
 	const fuseFolderTitle = new Fuse(flat, {
 		keys: ["folderTitle"],
 		includeScore: true,
-		distance: 0.4,
 		shouldSort: true,
+		minMatchCharLength: 2,
 	});
 	const folderTitleMatches = fuseFolderTitle
 		.search(searchTerm)
-		.map((result) => result.item)
 		.filter(
-			(bookmark) =>
-				bookmark.folderTitle &&
-				bookmark.url &&
-				bookmark.title &&
-				!titleIds.has(bookmark.id),
+			(result) =>
+				result.item.folderTitle &&
+				result.item.url &&
+				result.item.title &&
+				!titleIds.has(result.item.id),
 		)
-		.map((bookmark) => ({ ...bookmark, matchType: "folderTitle" }));
+		.map((result) => ({
+			...result.item,
+			matchType: "folderTitle",
+			score: result.score,
+		}));
 
-	const allMatches = [...titleMatches, ...folderTitleMatches];
+	const allMatches = [...titleMatches, ...folderTitleMatches].sort(
+		(a, b) => a.score - b.score,
+	);
 	return allMatches.map(
 		(bookmark) => new BookmarkMatchComponent(bookmark, bookmark.score),
 	);
