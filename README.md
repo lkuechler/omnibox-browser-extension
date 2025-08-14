@@ -2,6 +2,15 @@
 
 A browser extension that adds a command palette to the browser.
 
+- [Why](#why)
+- [Feature set](#feature-set)
+  - [Search your tabs](#search-your-tabs)
+  - [Execute commands](#execute-commands)
+  - [Audio search](#audio-search)
+- [Installation](#installation)
+- [Settings](#settings)
+- [FAQ](#faq)
+
 ## Why
 
 We all know the feeling: After a lenghty research session we've got a million tabs open relating to various aspects of our current task. And while it might be interesting to stare at this visual representation of our train of thought, finding anything specific in the mess left behind is often a nightmare.
@@ -20,6 +29,12 @@ This extensions aims to provide a unified, accessible control scheme for all bro
 
 ### Audio search
 > This modifier allows you to find any tabs that are currently playing audio.
+
+## Installation
+
+The easiest way to install the extension is through the extension stores of your browser
+
+- [Firefox](https://addons.mozilla.org/en-US/firefox/addon/omnibox/)
 
 ## Settings
 
