@@ -48,3 +48,9 @@ The easiest way to install the extension is through the extension stores of your
 
 1. Can I change the keyboard shortcuts?
 > Yes! [Firefox](https://support.mozilla.org/en-US/kb/manage-extension-shortcuts-firefox)
+
+## Screenshots
+
+![Screenshot 1](docs/images/omnibox-screenshot-01-firefox.png)
+![Screenshot 2](docs/images/omnibox-screenshot-02-firefox.png)
+![Screenshot 3](docs/images/omnibox-screenshot-03-firefox.png)
