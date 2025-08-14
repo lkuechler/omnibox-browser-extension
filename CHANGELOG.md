@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.6.0](https://github.com/lkuechler/omnibox-browser-extension/compare/omnibox-browser-extension-v0.5.2...omnibox-browser-extension-v0.6.0) (2025-08-14)
+
+
+### Features
+
+* add extension logo ([e2a5b85](https://github.com/lkuechler/omnibox-browser-extension/commit/e2a5b85e2b12667b1239f7dae1d92a98d4b447c5))
+* **README:** start readme ([307fa27](https://github.com/lkuechler/omnibox-browser-extension/commit/307fa27f22b9f0e27c0df2cf2e2d446fd7e47344))
+
 ## [0.5.2](https://github.com/lkuechler/omnibox-browser-extension/compare/omnibox-browser-extension-v0.5.1...omnibox-browser-extension-v0.5.2) (2025-08-11)
 
 
