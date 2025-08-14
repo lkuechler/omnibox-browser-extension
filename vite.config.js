@@ -1,6 +1,6 @@
 import { defineConfig } from "vite";
 import { resolve } from "path";
-import { copyFileSync } from "fs";
+import { copyFileSync, cpSync } from "fs";
 
 export default defineConfig({
 	build: {
@@ -35,6 +35,14 @@ export default defineConfig({
 					resolve(__dirname, "LICENSE"),
 					resolve(__dirname, "dist/LICENSE"),
 				);
+			},
+		},
+		{
+			name: "copy-logo-folder",
+			closeBundle() {
+				cpSync(resolve(__dirname, "logo"), resolve(__dirname, "dist/logo"), {
+					recursive: true,
+				});
 			},
 		},
 	],

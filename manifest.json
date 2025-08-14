@@ -4,6 +4,11 @@
 	"version": "0.5.2",
 	"description": "A browser extension that adds a command palette to the browser",
 	"author": "Lasse Kuechler <lasse@ukuechler.de>",
+	"icons": {
+		"64": "logo/64x64.png",
+		"96": "logo/96x96.png",
+		"128": "logo/128x128.png"
+	},
 	"browser_specific_settings": {
 		"gecko": {
 			"id": "omniboxextension@nlug.de"
