@@ -1,6 +1,6 @@
 {
 	"name": "omnibox-browser-extension",
-	"version": "0.8.0",
+	"version": "0.9.0",
 	"description": "A browser extension that adds a command palette to the browser",
 	"scripts": {
 		"start": "npm run build && npm run watch & web-ext run --source-dir=dist",
