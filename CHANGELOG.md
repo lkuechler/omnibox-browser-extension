@@ -1,5 +1,19 @@
 # Changelog
 
+## [0.8.0](https://github.com/lkuechler/omnibox-browser-extension/compare/omnibox-browser-extension-v0.7.0...omnibox-browser-extension-v0.8.0) (2025-08-15)
+
+
+### Features
+
+* **bookmarks:** show folder name ([fa66e0f](https://github.com/lkuechler/omnibox-browser-extension/commit/fa66e0fb336d91fbaf21db66acc2e09238229c55))
+* **commands:** add closeOtherTabs command ([cc3201f](https://github.com/lkuechler/omnibox-browser-extension/commit/cc3201f5283a5ec2f86d2fc73153d409b4bbc179))
+* **commands:** add closeToTheLeft command ([f6cf91d](https://github.com/lkuechler/omnibox-browser-extension/commit/f6cf91dce6d263b4c07ddd145d609ba2c178334e))
+
+
+### Bug Fixes
+
+* **closeTabsToTheRight:** close omnibox after command execution ([d2f2f58](https://github.com/lkuechler/omnibox-browser-extension/commit/d2f2f5856c1fd619877a18fe00644115e1ee45c9))
+
 ## [0.7.0](https://github.com/lkuechler/omnibox-browser-extension/compare/omnibox-browser-extension-v0.6.0...omnibox-browser-extension-v0.7.0) (2025-08-15)
 
 
