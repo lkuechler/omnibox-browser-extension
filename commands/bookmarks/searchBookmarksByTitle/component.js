@@ -13,35 +13,43 @@ export class BookmarkMatchComponent extends BaseMatch {
 	render() {
 		this.shadowRoot.innerHTML = `
 			<style>
-				.selected {
+				.bookmark-row {
+					display: flex;
+					flex-direction: column;
+					padding: 4px;
+					border-radius: 4px;
+					cursor: pointer;
+				}
+				.bookmark-row:hover {
+					background: var(--hover);
+				}
+				.bookmark-row.selected {
 					background: var(--highlight);
 					color: var(--text-highlight);
 					font-weight: bold;
-					border-radius: 4px;
-				}
-				:hover {
-					background: var(--hover);
-				}
-				.bookmark-row {
-					display: flex;
-					align-items: center;
-					padding: 8px;
 				}
 				.bookmark-title {
 					flex: 1;
-					cursor: pointer;
 					padding: 4px 0;
+				}
+				.bookmark-folder {
+					font-size: .5em;
 				}
 			</style>
 			<div class="bookmark-row">
+				<div class="bookmark-folder"></div>
 				<div class="bookmark-title"></div>
 			</div>
 		`;
-		const bookmarkTitle = this.shadowRoot.querySelector(".bookmark-title");
-		bookmarkTitle.textContent = this.tab.title;
-		bookmarkTitle.addEventListener("click", () => {
+
+		const bookmarkRow = this.shadowRoot.querySelector(".bookmark-row");
+		bookmarkRow.addEventListener("click", () => {
 			this.activate();
 		});
+		const bookmarkTitle = this.shadowRoot.querySelector(".bookmark-title");
+		bookmarkTitle.textContent = this.tab.title;
+		const bookmarkFolder = this.shadowRoot.querySelector(".bookmark-folder");
+		bookmarkFolder.textContent = this.tab.folderTitle;
 		this.updateSelectedStyle();
 	}
 
