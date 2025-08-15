@@ -52,8 +52,9 @@ The easiest way to install the extension is through the extension stores of your
 
 ## FAQ
 
-1. Can I change the keyboard shortcuts?
-> Yes! [Firefox](https://support.mozilla.org/en-US/kb/manage-extension-shortcuts-firefox)
+### 1. Can I change the keyboard shortcuts?
+
+Yes! [Firefox](https://support.mozilla.org/en-US/kb/manage-extension-shortcuts-firefox)
 
 ## Screenshots
 
