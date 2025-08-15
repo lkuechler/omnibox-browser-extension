@@ -7,7 +7,8 @@ export async function searchTabsByTitle(query) {
 		!query ||
 		query.startsWith(">") ||
 		query.startsWith(":") ||
-		query.startsWith("@")
+		query.startsWith("@") ||
+		query.startsWith("$")
 	)
 		return [];
 	const tabs = await browser.tabs.query({});
