@@ -44,10 +44,10 @@ The easiest way to install the extension is through the extension stores of your
 
 ## Settings
 
-**Alt + P**
+**Alt + O**
 > This opens the main omnibox dialog.
 
-**Alt + Shift + P**
+**Alt + Shift + O**
 > This opens the main omnibox dialog but already prefilled for entering commands.
 
 ## FAQ

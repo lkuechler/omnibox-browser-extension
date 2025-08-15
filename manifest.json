@@ -30,17 +30,17 @@
 	"commands": {
 		"open-input": {
 			"suggested_key": {
-				"default": "Alt+P",
-				"mac": "Alt+P",
-				"windows": "Alt+P"
+				"default": "Alt+O",
+				"mac": "Alt+O",
+				"windows": "Alt+O"
 			},
 			"description": "Open the input box"
 		},
 		"open-input-prefill": {
 			"suggested_key": {
-				"default": "Alt+Shift+P",
-				"mac": "Alt+Shift+P",
-				"windows": "Alt+Shift+P"
+				"default": "Alt+Shift+O",
+				"mac": "Alt+Shift+O",
+				"windows": "Alt+Shift+O"
 			},
 			"description": "Open the input box prefilled with command indicator"
 		}
