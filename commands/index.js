@@ -8,6 +8,7 @@ import { closeActiveTab } from "./tabs/closeActiveTab/match.js";
 import { closeTabsToTheRight } from "./tabs/closeTabsToTheRight/match.js";
 import { closeTabsToTheLeft } from "./tabs/closeTabsToTheLeft/match.js";
 import { closeOtherTabs } from "./tabs/closeOtherTabs/match.js";
+import { searchHistoryByTitle } from "./history/searchHistoryByTitle/match.js";
 
 export const commands = [
 	searchTabsByTitle,
@@ -20,4 +21,5 @@ export const commands = [
 	closeTabsToTheRight,
 	closeTabsToTheLeft,
 	closeOtherTabs,
+	searchHistoryByTitle,
 ];

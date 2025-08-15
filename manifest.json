@@ -16,7 +16,8 @@
 	},
 	"permissions": [
 		"tabs",
-		"bookmarks"
+		"bookmarks",
+		"history"
 	],
 	"background": {
 		"scripts": [
