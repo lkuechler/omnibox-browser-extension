@@ -7,6 +7,7 @@ import { searchBookmarksByTitle } from "./bookmarks/searchBookmarksByTitle/match
 import { closeActiveTab } from "./tabs/closeActiveTab/match.js";
 import { closeTabsToTheRight } from "./tabs/closeTabsToTheRight/match.js";
 import { closeTabsToTheLeft } from "./tabs/closeTabsToTheLeft/match.js";
+import { closeOtherTabs } from "./tabs/closeOtherTabs/match.js";
 
 export const commands = [
 	searchTabsByTitle,
@@ -18,4 +19,5 @@ export const commands = [
 	closeActiveTab,
 	closeTabsToTheRight,
 	closeTabsToTheLeft,
+	closeOtherTabs,
 ];
