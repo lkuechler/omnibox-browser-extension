@@ -1,4 +1,4 @@
-import Fuse from "fuse.js";
+import fuzzysort from "fuzzysort";
 
 import { BookmarkMatchComponent } from "./component.js";
 
@@ -18,51 +18,43 @@ export async function searchBookmarksByTitle(query) {
 
 	const flat = flattenBookmarks(allBookmarks);
 
-	const fuseTitle = new Fuse(flat, {
-		keys: ["title"],
-		includeScore: true,
-		shouldSort: true,
-		minMatchCharLength: 2,
+	const fuseTitle = fuzzysort.go(searchTerm, flat, {
+		key: ["title"],
 	});
 	const titleMatches = fuseTitle
-		.search(searchTerm)
 		.filter(
 			(result) =>
-				result.item.title &&
-				result.item.folderTitle !== "Bookmarks Menu" &&
-				result.item.folderTitle !== "Mozilla Firefox",
+				result.obj.title &&
+				result.obj.folderTitle !== "Bookmarks Menu" &&
+				result.obj.folderTitle !== "Mozilla Firefox",
 		)
 		.map((result) => ({
-			...result.item,
+			...result.obj,
 			matchType: "title",
 			score: result.score,
 		}));
 
 	const titleIds = new Set(titleMatches.map((b) => b.id));
 
-	const fuseFolderTitle = new Fuse(flat, {
-		keys: ["folderTitle"],
-		includeScore: true,
-		shouldSort: true,
-		minMatchCharLength: 2,
+	const fuseFolderTitle = fuzzysort.go(searchTerm, flat, {
+		key: ["folderTitle"],
 	});
 	const folderTitleMatches = fuseFolderTitle
-		.search(searchTerm)
 		.filter(
 			(result) =>
-				result.item.folderTitle &&
-				result.item.url &&
-				result.item.title &&
-				!titleIds.has(result.item.id),
+				result.obj.folderTitle &&
+				result.obj.url &&
+				result.obj.title &&
+				!titleIds.has(result.obj.id),
 		)
 		.map((result) => ({
-			...result.item,
+			...result.obj,
 			matchType: "folderTitle",
 			score: result.score,
 		}));
 
 	const allMatches = [...titleMatches, ...folderTitleMatches].sort(
-		(a, b) => a.score - b.score,
+		(a, b) => b.score - a.score,
 	);
 	return allMatches.map(
 		(bookmark) => new BookmarkMatchComponent(bookmark, bookmark.score),

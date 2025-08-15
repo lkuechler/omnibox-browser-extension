@@ -15,7 +15,7 @@ export async function runAllCommandsAndCollectMatches(query) {
 	}
 
 	matches.sort((a, b) => {
-		return a.searchScore - b.searchScore;
+		return b.searchScore - a.searchScore;
 	});
 
 	return matches;
