@@ -10,6 +10,9 @@ A browser extension that adds a command palette to the browser.
 - [Installation](#installation)
 - [Settings](#settings)
 - [FAQ](#faq)
+- [Screenshots](#screenshots)
+- [Development](#development)
+- [Distribution](#distribution)
 
 ## Why
 
@@ -54,3 +57,22 @@ The easiest way to install the extension is through the extension stores of your
 ![Screenshot 1](docs/images/omnibox-screenshot-01-firefox.png)
 ![Screenshot 2](docs/images/omnibox-screenshot-02-firefox.png)
 ![Screenshot 3](docs/images/omnibox-screenshot-03-firefox.png)
+
+## Development
+
+To contribute to the development of this extension, please follow these steps:
+
+1. Clone the repository
+2. Install the dependencies `npm install`
+3. To debug the extension in Firefox, run `npm run start` or `npm run start:chrome` for Chrome.
+
+## Distribution
+
+To create a production build of the extension, run the following commands:
+
+```bash
+npm run build
+npm run bundle
+```
+
+This will generate a zip file containing the extension in the `web-ext-artifacts` folder, which can be loaded into your browser.
