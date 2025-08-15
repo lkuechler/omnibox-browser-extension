@@ -14,6 +14,7 @@ export class CloseTabsToTheRight extends BaseMatch {
 		tabsToClose.forEach((tab) => {
 			browser.tabs.remove(tab.id);
 		});
+		window.close();
 	}
 
 	render() {
