@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.7.0](https://github.com/lkuechler/omnibox-browser-extension/compare/omnibox-browser-extension-v0.6.0...omnibox-browser-extension-v0.7.0) (2025-08-15)
+
+
+### Features
+
+* **search:** improve fuzzy search ([480a2ae](https://github.com/lkuechler/omnibox-browser-extension/commit/480a2ae156c037cc892df144cf5aa5a81b904ad5))
+
 ## [0.6.0](https://github.com/lkuechler/omnibox-browser-extension/compare/omnibox-browser-extension-v0.5.2...omnibox-browser-extension-v0.6.0) (2025-08-14)
 
 
