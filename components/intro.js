@@ -27,6 +27,7 @@ export class Intro extends HTMLElement {
 				<li>Press <strong>Enter</strong> to switch to the selected tab.</li>
 				<li>Start your search with <strong>&gt;</strong> to only get commands.</li>
 				<li>Start your search with <strong>@</strong> to search bookmarks.</li>
+				<li>Start your search with <strong>$</strong> to search history.</li>
 				<li>Type <strong>:audio</strong> to filter tabs playing audio.</li>
 			</ul>
 		`;
