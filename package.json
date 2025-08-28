@@ -14,6 +14,9 @@
 	},
 	"author": "Lasse Kuechler <lasse@ukuechler.de>",
 	"license": "MIT",
+	"engines": {
+		"node": ">=22.0.0"
+	},
 	"devDependencies": {
 		"prettier": "^3.6.2",
 		"web-ext": "^8.9.0",
