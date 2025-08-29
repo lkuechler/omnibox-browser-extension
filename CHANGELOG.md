@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.10.0](https://github.com/lkuechler/omnibox-browser-extension/compare/omnibox-browser-extension-v0.9.0...omnibox-browser-extension-v0.10.0) (2025-08-29)
+
+
+### Features
+
+* **searchBookmarksByTitle:** improve searching over folder ([b5bacfd](https://github.com/lkuechler/omnibox-browser-extension/commit/b5bacfdc57ff70290b29c7ca22de08ceb653d32d))
+* show match highlight ([fa45289](https://github.com/lkuechler/omnibox-browser-extension/commit/fa452899a756257cd96bcdbcfef9e7e696d66608))
+
+
+### Bug Fixes
+
+* **results:** reduce flicker that was caused by adding result one at a time ([6906ffb](https://github.com/lkuechler/omnibox-browser-extension/commit/6906ffb5fdcdc59b95294b72c1ebbb2839032489))
+
 ## [0.9.0](https://github.com/lkuechler/omnibox-browser-extension/compare/omnibox-browser-extension-v0.8.0...omnibox-browser-extension-v0.9.0) (2025-08-15)
 
 
