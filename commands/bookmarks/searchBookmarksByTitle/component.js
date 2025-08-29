@@ -1,3 +1,5 @@
+import DOMPurify from "dompurify";
+
 import { BaseMatch } from "../../baseMatchComponent.js";
 
 export class BookmarkMatchComponent extends BaseMatch {
@@ -26,7 +28,6 @@ export class BookmarkMatchComponent extends BaseMatch {
 				.bookmark-row.selected {
 					background: var(--highlight);
 					color: var(--text-highlight);
-					font-weight: bold;
 				}
 				.bookmark-title {
 					flex: 1;
@@ -47,9 +48,15 @@ export class BookmarkMatchComponent extends BaseMatch {
 			this.activate();
 		});
 		const bookmarkTitle = this.shadowRoot.querySelector(".bookmark-title");
-		bookmarkTitle.textContent = this.tab.title;
+		bookmarkTitle.innerHTML = DOMPurify.sanitize(
+			this.tab.titleHighlighted || this.tab.title,
+			{ ALLOWED_TAGS: ["b"] },
+		);
 		const bookmarkFolder = this.shadowRoot.querySelector(".bookmark-folder");
-		bookmarkFolder.textContent = this.tab.folderTitle;
+		bookmarkFolder.innerHTML = DOMPurify.sanitize(
+			this.tab.folderHighlighted || this.tab.folderTitle,
+			{ ALLOWED_TAGS: ["b"] },
+		);
 		this.updateSelectedStyle();
 	}
 

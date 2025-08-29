@@ -23,7 +23,6 @@ export class CloseTabsToTheRight extends BaseMatch {
 				.selected {
 					background: var(--highlight);
 					color: var(--text-highlight);
-					font-weight: bold;
 					border-radius: 4px;
 				}
 				:hover {
@@ -35,7 +34,7 @@ export class CloseTabsToTheRight extends BaseMatch {
 					color: var(--text);
 				}
 			</style>
-			<div>&#x276F; Close tabs to the right</div>
+			<div>&#x276F; ${this.tab.titleHighlighted}</div>
 		`;
 		this.shadowRoot.querySelector("div").addEventListener("click", () => {
 			this.activate();

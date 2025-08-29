@@ -17,7 +17,6 @@ export class DuplicateActiveTab extends BaseMatch {
 				.selected {
 					background: var(--highlight);
 					color: var(--text-highlight);
-					font-weight: bold;
 					border-radius: 4px;
 				}
 				:hover {
@@ -29,7 +28,7 @@ export class DuplicateActiveTab extends BaseMatch {
 					color: var(--text);
 				}
 			</style>
-			<div>&#x276F; Duplicate active tab</div>
+			<div>&#x276F; ${this.tab.titleHighlighted}</div>
 		`;
 		this.shadowRoot.querySelector("div").addEventListener("click", () => {
 			this.activate();

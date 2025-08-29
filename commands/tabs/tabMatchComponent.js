@@ -1,3 +1,5 @@
+import DOMPurify from "dompurify";
+
 import { BaseMatch } from "../baseMatchComponent.js";
 
 export class TabMatch extends BaseMatch {
@@ -18,7 +20,6 @@ export class TabMatch extends BaseMatch {
 				.tab-row.selected {
 					background: var(--highlight);
 					color: var(--text-highlight);
-					font-weight: bold;
 				}
 				.tab-row:hover {
 					background: var(--hover);
@@ -50,7 +51,10 @@ export class TabMatch extends BaseMatch {
 			</div>
 		`;
 		const tabTitle = this.shadowRoot.querySelector(".tab-title");
-		tabTitle.textContent = this.tab.title;
+		tabTitle.innerHTML = DOMPurify.sanitize(
+			this.tab.titleHighlighted || this.tab.title,
+			{ ALLOWED_TAGS: ["b"] },
+		);
 		tabTitle.addEventListener("click", () => {
 			this.activate();
 		});
