@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.10.1](https://github.com/lkuechler/omnibox-browser-extension/compare/omnibox-browser-extension-v0.10.0...omnibox-browser-extension-v0.10.1) (2025-08-29)
+
+
+### Bug Fixes
+
+* **popup:** limit max-height below the max value enforced by browsers ([f906584](https://github.com/lkuechler/omnibox-browser-extension/commit/f9065842060f19d3b81ae43e84b28e6510fb75b2))
+
 ## [0.10.0](https://github.com/lkuechler/omnibox-browser-extension/compare/omnibox-browser-extension-v0.9.0...omnibox-browser-extension-v0.10.0) (2025-08-29)
 
 
