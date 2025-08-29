@@ -15,7 +15,7 @@ class TabSearchPopup extends HTMLElement {
 		const currentWindowWidth = currentWindow.width;
 
 		const computedWidth = Math.min(currentWindowWidth / 2, 600);
-		const computedHeight = currentWindowHeight / 2;
+		const computedHeight = Math.min(currentWindowHeight / 2, 550);
 
 		this.shadowRoot.innerHTML = `
 			<style>
