@@ -75,7 +75,6 @@ class TabSearchPopup extends HTMLElement {
 		};
 
 		const searchTabs = async (query) => {
-			resultsDiv.innerHTML = "";
 			selectedIndex = -1;
 			// Hide intro if anything is typed, show if empty
 			if (intro) {
@@ -84,15 +83,18 @@ class TabSearchPopup extends HTMLElement {
 
 			const matches = await runAllCommandsAndCollectMatches(query);
 			matchElements = matches;
+			let newResults = [];
+
 			if (query.length > 0 && matches.length === 0) {
 				const noMatchDiv = document.createElement("div");
 				noMatchDiv.textContent = "No matches found.";
-				resultsDiv.appendChild(noMatchDiv);
-				return;
+				newResults.push(noMatchDiv);
+			} else {
+				newResults = matches;
 			}
-			matches.forEach((match) => {
-				resultsDiv.appendChild(match);
-			});
+
+			resultsDiv.replaceChildren(...newResults);
+
 			if (matchElements.length > 0) {
 				updateSelection(0);
 			}
