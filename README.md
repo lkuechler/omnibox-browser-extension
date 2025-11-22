@@ -38,6 +38,14 @@ This extensions aims to provide a unified, accessible control scheme for all bro
 
 > This modifier allows you to find any tabs that are currently playing audio.
 
+### Bookmark search
+
+> This modifier allows you to search through your bookmarks and bookmark folders for specific pages.
+
+### History search
+
+> This modifier allows you to search through your browsing history for specific pages.
+
 ## Installation
 
 The easiest way to install the extension is through the extension stores of your browser
