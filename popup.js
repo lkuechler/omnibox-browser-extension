@@ -41,6 +41,7 @@ class TabSearchPopup extends HTMLElement {
 				<input-component id="input"></input-component>
 				<div id="results"></div>
 				<intro-component id="intro"></intro-component>
+				<footer-component></footer-component>
 			</div>
 		`;
 
