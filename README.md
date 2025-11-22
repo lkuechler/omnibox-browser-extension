@@ -13,6 +13,8 @@ A browser extension that adds a command palette to the browser.
 - [Screenshots](#screenshots)
 - [Development](#development)
 - [Distribution](#distribution)
+- [Used Libraries](#used-libraries)
+- [Icon credits](#icon-credits)
 
 ## Why
 
@@ -81,3 +83,21 @@ npm run bundle
 ```
 
 This will generate a zip file containing the extension in the `web-ext-artifacts` folder, which can be loaded into your browser.
+
+## Used Libraries
+
+- [web-ext](github.com/mozilla/web-ext) - Command line tool to help build, run, and test web extensions
+- [fuzzysort](https://github.com/farzher/fuzzysort) - Used for fuzzy searching through tabs and commands
+- [DOMPurify](https://github.com/cure53/DOMPurify) - Used to sanitize tab titles before rendering
+- [Vite](https://vite.dev) - Build tool used for bundling the extension
+- [Prettier](https://prettier.io) - Code formatter used to maintain consistent code style
+
+## Icon credits
+
+### [heroicons](https://heroicons.com/outline)
+
+The following icons are used from the heroicons outline set under MIT License:
+
+- hidden
+- mute
+- unmute
