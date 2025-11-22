@@ -41,6 +41,7 @@ This extensions aims to provide a unified, accessible control scheme for all bro
 The easiest way to install the extension is through the extension stores of your browser
 
 - [Firefox](https://addons.mozilla.org/en-US/firefox/addon/omnibox/)
+- [Chrome](https://chromewebstore.google.com/detail/omnibox/jfgaobmolpadfchgfnfihogfbdhlbbpn)
 
 ## Settings
 
