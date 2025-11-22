@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.0.0](https://github.com/lkuechler/omnibox-browser-extension/compare/omnibox-browser-extension-v0.10.1...omnibox-browser-extension-v1.0.0) (2025-11-22)
+
+
+### Features
+
+* add footer showing version and linking to repo ([5312c50](https://github.com/lkuechler/omnibox-browser-extension/commit/5312c5049d044ba668ff5258bcaee96096ffeb39))
+* **commands:** new command for searching through history ([ca92588](https://github.com/lkuechler/omnibox-browser-extension/commit/ca92588a4eaf069e9b80001d6819f6442762ae9b))
+
+
+### Miscellaneous Chores
+
+* release 1.0.0 ([918c0d1](https://github.com/lkuechler/omnibox-browser-extension/commit/918c0d101d36f8f51edafebec7ccc4a352f98a87))
+
 ## [0.10.1](https://github.com/lkuechler/omnibox-browser-extension/compare/omnibox-browser-extension-v0.10.0...omnibox-browser-extension-v0.10.1) (2025-08-29)
 
 
