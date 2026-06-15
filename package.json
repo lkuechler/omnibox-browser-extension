@@ -19,7 +19,7 @@
 	},
 	"devDependencies": {
 		"prettier": "^3.6.2",
-		"web-ext": "^10.3.0",
+		"web-ext": "^10.4.0",
 		"vite": "^7.3.2"
 	},
 	"dependencies": {
